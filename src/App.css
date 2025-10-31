@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Poppins", sans-serif;
+  background-color: #fffaf8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.page-container {
+  display: flex;
   min-height: 100vh;
+  background-color: #fffaf8;
+  background-image: radial-gradient(circle at 10% 90%, #fdded0 0%, #fffaf8 100%);
+}
+
+.left-panel,
+.right-panel {
+  flex: 1;
+  padding: 4rem 3rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.left-panel {
+  color: #222;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.right-panel {
+  background-color: #fffaf8;
+}
+
+.right-panel h2 {
+  color: #222;
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.subtext {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+  height: 110px;
+}
+
+button {
+  background-color: #f15a24;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #d24e20;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.response {
+  font-weight: 500;
+  margin-top: 5px;
+  color: #333;
+}
+
+.contact-footer {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #f15a24;
+}
+
+.contact-footer a {
+  color: #f15a24;
+  text-decoration: none;
+}
+
+.contact-footer a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+    padding: 2rem 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .left-panel,
+  .right-panel {
+    padding: 1.5rem 1rem;
+  }
+
+  form {
+    max-width: 100%;
   }
 }
